@@ -1,0 +1,77 @@
+{
+  "expo": {
+    "name": "voxv1",
+    "slug": "voxv1",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "bundleIdentifier": "com.voxiviumpbc.voxivium",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs access to your camera to capture photos for identity verification.",
+        "NSMicrophoneUsageDescription": "This app needs access to your microphone to record video for identity verification.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to select photos for identity verification.",
+        "NFCReaderUsageDescription": "This app needs access to your NFC hardware to scan identification documents.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.NFC"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "googleServicesFile": "./google-services.json",
+      "package": "com.voxiviumpbc.voxivium"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+      "@react-native-firebase/crashlytics",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          },
+          "android": {
+            "compileSdkVersion": 36,
+            "targetSdkVersion": 36,
+            "minSdkVersion": 26,
+            "buildToolsVersion": "36.0.0",
+            "kotlinVersion": "2.1.20",
+            "extraMavenRepos": [
+              "https://cdn.veriff.me/android/"
+            ]
+          }
+        }
+      ],
+      "./withAndroidManifestPatch.js"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "e377048d-1efa-4441-9335-fcde1cc4abe5"
+      }
+    }
+  }
+}
